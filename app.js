@@ -1,21 +1,22 @@
 "use strict";
-class Department {
-    constructor(id, name) {
+var Department = /** @class */ (function () {
+    function Department(id, name) {
         this.id = id;
         this.name = name;
         this.employees = [];
     }
-    describe() {
-        console.log(`Department: (${this.id}) ${this.name}`);
-    }
-    addEmployee(employee) {
+    Department.prototype.describe = function () {
+        console.log("Department: (" + this.id + ") " + this.name);
+    };
+    Department.prototype.addEmployee = function (employee) {
         this.employees.push(employee);
-    }
-    printEmployeeInformation() {
+    };
+    Department.prototype.printEmployeeInformation = function () {
         console.log(this.employees);
-    }
-}
-const accounting = new Department('d1', 'Accounting');
+    };
+    return Department;
+}());
+var accounting = new Department('d1', 'Accounting');
 accounting.describe();
 accounting.addEmployee('Max');
 accounting.addEmployee('Manu');
