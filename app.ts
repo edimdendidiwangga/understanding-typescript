@@ -1,4 +1,18 @@
-const add = (...a: number[]) => a
+class Department {
+    name: string;
 
+    constructor(n: string) {
+        this.name = n;
+    }
 
-console.log(add(1, 2, 3, 4));
+    describe(this: Department) {
+        console.log('Department: ' + this.name);
+    }
+}
+
+const accounting = new Department('Accounting');
+
+accounting.describe();
+
+// const accountingCopy = { name: 'd', describe: accounting.describe }
+// accountingCopy.describe()
