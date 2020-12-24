@@ -1,8 +1,13 @@
 class Department {
     protected employees: String[] = [];
+    static fiscalYear: number = 2000;
 
     constructor(private readonly id: string, public name: string) {
 
+    }
+
+    static createEmployee(name: string) {
+        return { name };
     }
 
     describe(this: Department) {
@@ -64,7 +69,13 @@ class AccountingDepartment extends Department {
     }
 }
 
+const employee1 = Department.createEmployee('Max')
+console.log('employee1', employee1, Department.fiscalYear);
+
+
 const it = new ITDepartment('d1', ['Max']);
+
+Math.pow
 
 it.describe();
 it.addEmployee('Max');
