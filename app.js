@@ -1,2 +1,4 @@
 "use strict";
-console.log('Your code goes here!!');
+const add = (...a) => a;
+console.log(add(1, 2, 3, 4));
+//# sourceMappingURL=app.js.map
