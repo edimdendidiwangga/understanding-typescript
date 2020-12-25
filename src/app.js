@@ -1,5 +1,5 @@
 "use strict";
-var el = {
+const el = {
     name: 'Max',
     privileges: ['create-server'],
     startDate: new Date()
@@ -21,27 +21,21 @@ function printEmployeeInformation(emp) {
     }
 }
 printEmployeeInformation(el);
-var Car = /** @class */ (function () {
-    function Car() {
-    }
-    Car.prototype.drive = function () {
+class Car {
+    drive() {
         console.log('Driving...');
-    };
-    return Car;
-}());
-var Truck = /** @class */ (function () {
-    function Truck() {
     }
-    Truck.prototype.drive = function () {
+}
+class Truck {
+    drive() {
         console.log('Driving a truck...');
-    };
-    Truck.prototype.loadCargo = function (amount) {
+    }
+    loadCargo(amount) {
         console.log('Loading cargo... ' + amount);
-    };
-    return Truck;
-}());
-var v1 = new Car();
-var v2 = new Truck();
+    }
+}
+const v1 = new Car();
+const v2 = new Truck();
 function useVehicle(vehicle) {
     vehicle.drive();
     if (vehicle instanceof Truck) {
@@ -51,7 +45,7 @@ function useVehicle(vehicle) {
 useVehicle(v1);
 useVehicle(v2);
 function moveAnimal(animal) {
-    var speed;
+    let speed;
     switch (animal.type) {
         case 'bird':
             speed = animal.flyingSpeed;
@@ -60,7 +54,16 @@ function moveAnimal(animal) {
             speed = animal.runningSpeed;
             break;
     }
-    console.log('Moving at speed:' + speed);
+    console.log('Moving at speed: ' + speed);
 }
 moveAnimal({ type: 'bird', flyingSpeed: 10 });
+// const userInputElement = <HTMLInputElement>document.getElementById('user-input')!;
+const userInputElement = document.getElementById('user-input');
+if (userInputElement) {
+    userInputElement.value = 'Hi there!';
+}
+const errorBag = {
+    email: 'Not a valid email!',
+    username: 'Must start with a capital character!',
+};
 //# sourceMappingURL=app.js.map
