@@ -45,7 +45,7 @@ var ITDepartment = /** @class */ (function (_super) {
 var AccountingDepartment = /** @class */ (function (_super) {
     __extends(AccountingDepartment, _super);
     function AccountingDepartment(id, reports) {
-        var _this = _super.call(this, id, 'IT') || this;
+        var _this = _super.call(this, id, 'Accounting') || this;
         _this.reports = reports;
         _this.lastReport = reports[0];
         return _this;
@@ -66,6 +66,13 @@ var AccountingDepartment = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
+    AccountingDepartment.getInstance = function () {
+        if (AccountingDepartment.instance) {
+            return this.instance;
+        }
+        this.instance = new AccountingDepartment('d2', []);
+        return this.instance;
+    };
     AccountingDepartment.prototype.describe = function () {
         console.log('Accounting Department - ID: ' + this.id);
     };
@@ -85,15 +92,16 @@ var AccountingDepartment = /** @class */ (function (_super) {
     return AccountingDepartment;
 }(Department));
 var employee1 = Department.createEmployee('Max');
-console.log('employee1', employee1, Department.fiscalYear);
 var it = new ITDepartment('d1', ['Max']);
-Math.pow;
 it.describe();
 it.addEmployee('Max');
 it.addEmployee('Manu');
 it.printEmployeeInformation();
-console.log(it);
-var accounting = new AccountingDepartment('d2', []);
+// const accounting = new AccountingDepartment('d2', []);
+var accounting = AccountingDepartment.getInstance();
+var accounting2 = AccountingDepartment.getInstance();
+console.log(accounting);
+console.log(accounting2);
 accounting.mostRecentReport = 'Year End Report';
 accounting.addReport('Something went wrong..');
 console.log(accounting.mostRecentReport);
