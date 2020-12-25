@@ -35,7 +35,19 @@ function add(a: Combinable, b: Combinable) {
 };
 
 const result = add('e', 'd'); 
-result.split(' ')
+result.split(' ');
+
+const fetchdUserData = {
+    id: 'u1',
+    name: 'Max',
+    // job: { title: 'CEO', description: 'My own company' }
+}
+
+console.log(fetchdUserData?.job?.title);
+
+const userInput = '';
+
+const storedData = userInput ?? 'DEFAULT';
 
 // type UnknownEmployee = Employee | Admin;
 
